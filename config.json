@@ -1,0 +1,61 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "CC:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "031-45-154",
+	"manufacturer": "Mathinho",
+	"model": "RaspberryPi2"
+    },
+ 
+    "accessories": [
+    		{
+      		"accessory": "mqtt-temperature",
+      		"name": "Wohnzimmer Temperatur",
+      		"url": "mqtt://raspberrypi.local",
+      		"topic": "/home/livingroom/temperature",
+      		"username": "username",
+      		"password": "password"
+    		},
+
+		{
+		"accessory": "mqtt-temperature",
+		"name": "Schlafzimmer Temperatur",
+		"url": "mqtt://raspberrypi.local",
+		"topic": "/home/bedroom/temperature",
+		"username": "username",
+		"password": "password"
+		},
+
+		{
+		"accessory": "mqttswitch",
+		"name": "Wohnzimmer Licht",
+		"url": "mqtt://raspberrypi.local",
+		"username": "username",
+		"password": "password",
+		"caption": "Wohnzimmer Licht",
+		"topics": {
+				"statusGet": "/home/livingroom/lightGET",
+				"statusSet": "/home/livingroom/lightSET"
+			}
+		},
+
+		{
+ 		"accessory": "mqtt-dimmer",
+  		"name": "Wohnzimmer Dimmer",
+  		"url": "mqtt://raspberrypi.local", 
+  		"username": "<username>",
+  		"password": "<password>",
+  		"caption": "Wohnzimmer Dimmer",
+  		"onValue": "true",
+  		"offValue": "false",
+  		"topics": {
+    				"statusGet":    "/home/livingroom/dimmerGET",
+    				"statusSet":    "/home/livingroom/dimmerSET"
+  			}
+		}
+    ],
+ 
+    "platforms": [
+    ]
+}
