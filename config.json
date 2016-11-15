@@ -29,7 +29,7 @@
 
 		{
 		"accessory": "mqttswitch",
-		"name": "Wohnzimmer Lichtschalter",
+		"name": "Wohnzimmer Licht",
 		"url": "mqtt://raspberrypi.local",
 		"username": "username",
 		"password": "password",
